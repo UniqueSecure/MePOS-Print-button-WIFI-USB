@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MePOS Print button</string>
+    <string name="print_started">A printer job has started.</string>
+    <string name="print_completed">Printer job has completed successfully.</string>
+    <string name="print_error">Error on printer job.</string>
+</resources>
