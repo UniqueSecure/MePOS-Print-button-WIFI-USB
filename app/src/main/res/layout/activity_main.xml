@@ -13,32 +13,25 @@
     tools:context="io.mepos.meposprintbutton.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Printing example"
+        style="@style/MainStyle"
+        android:text="@string/printing_example"
+        android:layout_marginTop="200dp"
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/btnprint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Print" />
+        android:id="@+id/btnPrint"
+        style="@style/MainStyle"
+        android:text="@string/print" />
 
     <EditText
         android:id="@+id/ipText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        style="@style/MainStyle"
+        android:hint="@string/ip_address"
         android:ems="10"
-        android:hint="IP address"
         android:inputType="text" />
 
     <CheckBox
         android:id="@+id/printWifiBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Print wifi" />
+        style="@style/MainStyle"
+        android:text="@string/print_wifi" />
 </LinearLayout>

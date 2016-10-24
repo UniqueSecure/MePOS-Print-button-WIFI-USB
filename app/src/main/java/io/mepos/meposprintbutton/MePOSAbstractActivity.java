@@ -11,7 +11,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.uniquesecure.meposconnect.MePOSConnectionType;
 import com.uniquesecure.meposconnect.MePOSException;
 import com.uniquesecure.meposconnect.MePOSPrinterCallback;
@@ -19,7 +18,7 @@ import com.uniquesecure.meposconnect.MePOSPrinterCallback;
 
 import persistence.MePOSSingleton;
 
-public abstract class MePOSAbstractActivity extends AppCompatActivity implements MePOSPrinterCallback {
+public abstract class MePOSAbstractActivity extends AppCompatActivity implements MePOSPrinterCallback{
 
     private static final String TAG = MePOSAbstractActivity.class.getSimpleName();
 
@@ -84,6 +83,7 @@ public abstract class MePOSAbstractActivity extends AppCompatActivity implements
         super.onDestroy();
     }
 
+
     @Override
     public void onPrinterStarted(MePOSConnectionType mePOSConnectionType, String s) {
         Snackbar.make(findViewById(android.R.id.content), R.string.print_started, Snackbar.LENGTH_SHORT).show();
@@ -98,4 +98,5 @@ public abstract class MePOSAbstractActivity extends AppCompatActivity implements
     public void onPrinterError(MePOSException e) {
         Snackbar.make(findViewById(android.R.id.content), R.string.print_error, Snackbar.LENGTH_SHORT).show();
     }
+
 }

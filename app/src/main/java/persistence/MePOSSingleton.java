@@ -1,7 +1,6 @@
 package persistence;
 
 import android.content.Context;
-
 import com.uniquesecure.meposconnect.MePOS;
 import com.uniquesecure.meposconnect.MePOSConnectionType;
 
