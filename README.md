@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-* Prepare you manifest.xml file (include de following line) necessary for wifi-printing.
+* Prepare you manifest.xml file (include the following line) necessary for wifi-printing.
 
 ```
 <uses-permission android:name="android.permission.INTERNET" />
