@@ -2,7 +2,7 @@
 
 # MePOS Connect printing
 
-Short guide to learn how to implement the _MePOS_ sdk.
+This is a sample code to quickly integrate the MePOS print feature to your application.
 
 ## Getting Started
 
