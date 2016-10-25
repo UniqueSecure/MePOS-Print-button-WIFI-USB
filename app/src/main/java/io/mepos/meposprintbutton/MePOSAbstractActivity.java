@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.CheckBox;
 import android.widget.Toast;
 import com.uniquesecure.meposconnect.MePOSConnectionType;
 import com.uniquesecure.meposconnect.MePOSException;
@@ -19,6 +20,7 @@ import com.uniquesecure.meposconnect.MePOSPrinterCallback;
 import persistence.MePOSSingleton;
 
 public abstract class MePOSAbstractActivity extends AppCompatActivity implements MePOSPrinterCallback{
+    CheckBox mCheckbox;
 
     private static final String TAG = MePOSAbstractActivity.class.getSimpleName();
 
@@ -27,6 +29,8 @@ public abstract class MePOSAbstractActivity extends AppCompatActivity implements
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (UsbManager.ACTION_USB_DEVICE_ATTACHED.equals(action)) {
+                mCheckbox = (CheckBox) findViewById(R.id.printWifiBox);
+                mCheckbox.setChecked(false);
                 MePOSSingleton.createInstance(getApplicationContext(), MePOSConnectionType.USB);
                 Toast.makeText(context, "MePOS  connected", Toast.LENGTH_SHORT).show();
             } else if (UsbManager.ACTION_USB_DEVICE_DETACHED.equals(action)) {
