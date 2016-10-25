@@ -17,8 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-* Prepare you manifest.xml file (include the following line) necessary for wifi-printing.
-
+* Prepare you manifest.xml file (necessary for wifi-printing) and include the following line:
 ```
 <uses-permission android:name="android.permission.INTERNET" />
 ```
@@ -46,7 +45,7 @@ public class ReceiptBuilder {
     }
 }
 ```
-2. In order to control the UI messages during the printing cycle, implement MePOSPrinterCallback on your printing activity and it's methods
+2. In order to control the UI messages during the printing cycle, implement MePOSPrinterCallback on your printing activity and its methods.
 ```
 @Override
    public void onPrinterStarted(MePOSConnectionType mePOSConnectionType, String s) {
@@ -67,11 +66,11 @@ public class ReceiptBuilder {
 ```
 MePOS mePOS = new MePOS(context, MePOSConnectionType.USB);
 ```
-4. Finally send to the printer the receipt prevously created.
+4. Finally send to the printer the receipt previously created.
 ```
 mePOS.print(receipt);
 ```
-5. For wifi printing create a wifi instance as follows.
+5. For wifi printing create a wifi instance as follows:
 ```
 MePOS mePOS = new MePOS(context, MePOSConnectionType.WIFI);
 mePOS.getConnectionManager().setConnectionIPAddress("192.168.1.64");
@@ -89,4 +88,4 @@ The code on this repository is an example from the SDK and for MePOS developers 
 
 ## Contact
 
-Please send us a email: skyfoxdigital.app@gmail.com
+Please send us an email: skyfoxdigital.app@gmail.com
