@@ -1,3 +1,5 @@
+# MePOS-Print-button-WIFI-USB
+
 # MePOS Connect printing
 
 Short guide to learn how to implement the _MePOS_ sdk.
@@ -86,4 +88,4 @@ The code on this repository is an example from the SDK and for MePOS developers 
 
 ## Contact
 
-Please send us an email: skyfoxdigital.app@gmail.com
+Please send us an email: us.unique.secure@gmail.com
