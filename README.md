@@ -11,12 +11,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-
 * Go to [Mepos.io](http://mepos.io/developers) and register as developer. There you will find the last SDK file for your project.
-
 
 ### Installing
 
+* Create a new Module in your Android project and select the option: *Import an existing JAR or AAR package*.
+* Define the path of your .aar file and the name of the submodule. In this case the module name is *MePOSConnectLib*
+* Add your module to your gradle build file:
+```
+compile project(':MePOSConnectLib')
+```
 * Prepare you manifest.xml file (necessary for wifi-printing) and include the following line:
 ```
 <uses-permission android:name="android.permission.INTERNET" />
