@@ -14,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Register as developer
 
-Go to [mepos.ip](http://mepos.io/) and register as developer.
+Go to [mepos.io](http://mepos.io/) and register as developer.
 
 ## Installing
 
