@@ -14,8 +14,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-### Installing
-
 There are 2 ways to install the SDK into your projec: 
 
 1.- Gradle interation
