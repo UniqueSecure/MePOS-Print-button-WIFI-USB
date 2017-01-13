@@ -12,10 +12,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Go to [Mepos.io](http://mepos.io/developers) and register as developer. There you will find the latest SDK file for your project.
 
-## Register
-
-Go to [mepos.io](http://mepos.io/) and register as developer.
-
 ## Installing
 
 ### Add the SDK to your project
@@ -58,7 +54,7 @@ android.hardware.usb.action.USB_DEVICE_DETACHED
 ```
 
 ## Running the tests
-
+~~~
 1. Create MePOS receipt.
 ```
 public class ReceiptBuilder {
@@ -75,6 +71,7 @@ public class ReceiptBuilder {
 }
 ```
 2. In order to control the UI messages during the printing cycle, implement MePOSPrinterCallback on your printing activity and its methods.
+~~~
 ```
 @Override
    public void onPrinterStarted(MePOSConnectionType mePOSConnectionType, String s) {
@@ -91,6 +88,7 @@ public class ReceiptBuilder {
        // some message
    }
 ```
+~~~
 3. Creating a USB MePOS instance.
 ```
 MePOS mePOS = new MePOS(context, MePOSConnectionType.USB);
@@ -100,6 +98,7 @@ MePOS mePOS = new MePOS(context, MePOSConnectionType.USB);
 mePOS.print(receipt);
 ```
 5. For wifi printing create a wifi instance as follows:
+~~~
 ```
 MePOS mePOS = new MePOS(context, MePOSConnectionType.WIFI);
 mePOS.getConnectionManager().setConnectionIPAddress("192.168.1.64");
