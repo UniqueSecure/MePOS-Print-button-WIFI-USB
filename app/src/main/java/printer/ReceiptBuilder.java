@@ -1,8 +1,23 @@
 package printer;
 
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
+
 import com.uniquesecure.meposconnect.*;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 public class ReceiptBuilder {
+
+    private Context context;
+
+    public ReceiptBuilder(Context context) {
+        this.context = context;
+    }
 
     public MePOSReceipt getShortReceipt() {
         MePOSReceipt receipt = new MePOSReceipt();
@@ -10,6 +25,9 @@ public class ReceiptBuilder {
 
         rcpt.setText("RECEIPT", MePOS.TEXT_STYLE_BOLD, MePOS.TEXT_SIZE_NORMAL, MePOS.TEXT_POSITION_CENTER);
         receipt.addLine(rcpt);
+
+        receipt.addLine(new MePOSReceiptSingleCharLine('-'));
+        receipt.addLine(new MePOSReceiptImageLine(getBitmapFromAsset(context, "ic_launcher.bmp")));
 
         rcpt = new MePOSReceiptTextLine();
         rcpt.setText("VAT", MePOS.TEXT_STYLE_NONE, MePOS.TEXT_STYLE_NONE, MePOS.TEXT_POSITION_LEFT);
@@ -97,6 +115,19 @@ public class ReceiptBuilder {
         receipt.addLine(new MePOSReceiptSingleCharLine('-'));
 
         return receipt;
+    }
+
+    private Bitmap getBitmapFromAsset(Context context, String filePath) {
+        AssetManager assetManager = context.getAssets();
+        InputStream istr;
+        Bitmap bitmap = null;
+        try {
+            istr = assetManager.open(filePath);
+            bitmap = BitmapFactory.decodeStream(istr);
+        } catch (IOException e) {
+            Log.e("No logo image", e.getLocalizedMessage());
+        }
+        return bitmap;
     }
 
 }
