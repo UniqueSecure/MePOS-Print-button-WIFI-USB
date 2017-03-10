@@ -7,7 +7,6 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.uniquesecure.meposconnect.MePOS;
 import com.uniquesecure.meposconnect.MePOSConnectionType;
 import com.uniquesecure.meposconnect.MePOSReceipt;
 
@@ -32,6 +31,7 @@ public class MainActivity extends MePOSAbstractActivity {
 //  if (mePOS.equals(null)){
 //     mePOS = new MePOS(this, MePOSConnectionType.USB);}
 
+        findMePOSUSB();
 
 
         mBtnPrint.setOnClickListener(new View.OnClickListener() {
